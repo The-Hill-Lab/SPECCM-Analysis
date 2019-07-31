@@ -53,7 +53,7 @@ print('Importing data...')
 rawData = pd.read_csv(filePath,dtype=sp.float64,sep='\t').as_matrix()
 Nt = int(rawData.shape[0])
 N = rawData.shape[1] - 1
-Nx = int(input("What's the image width (in pixels)?")) #Note that this has to be imported manually. We always specify dimensions in the data filename.
+Nx = int(input("What's the image width (in pixels)?")) #Note that this has to be specified manually. We always specify dimensions in the data filename.
 Ny = int(N/Nx)
 print('Image dimensions are x:', Nx, ', y:', Ny)
 
