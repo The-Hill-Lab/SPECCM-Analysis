@@ -75,10 +75,10 @@ print('Reformatting data: 100.0 percent complete.')
 
 
 Asc = 1e-12 #Scales to desired units of pA
-y0 = -38.4  #Background correction (in pA)
+y0 = 42.0  #Background correction (in pA)
 
 #This defines the primary fitting function for extracting photocurrents. The "dutyCycle" and "freq" values must be changed to values appropriate to the source employed. The fitting model is just the sum of a second order polynomial (dark currents) and another second order polynomial multiplied by a square waveform.
-dutyCycle = 0.53
+dutyCycle = 0.60
 freq = 25
 def fitFun2(x,ad,bd,cd,ah,bh,ch,th):
     return (ad*x**2 + bd*x + cd) + (ah*x**2 + bh*x + ch)*(0.5*signal.square(2*sp.pi*x*freq+th,dutyCycle)+0.5)
